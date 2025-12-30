@@ -1,4 +1,4 @@
-package com.br.weldyscarmo.gestao_vagas.modules.candidate;
+package com.br.weldyscarmo.gestao_vagas.modules.company.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,9 +14,9 @@ import org.hibernate.validator.constraints.Length;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity(name = "company")
 @Data
-@Entity(name = "candidate")
-public class CandidateEntity {
+public class CompanyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -33,7 +33,6 @@ public class CandidateEntity {
     @Length(min = 10, max = 100, message = "A senha deve conter entre 10 e 100 caracters")
     private String password;
     private String description;
-    private String curriculum;
 
     @CreationTimestamp
     LocalDateTime createdAt;
