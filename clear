@@ -1,0 +1,35 @@
+[33mcommit 371ebbbeeb213f19f8251cbf41b7f872b7a7f832[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Weldys Andrade do Carmo <weldyscarmo27@gmail.com>
+Date:   Tue Dec 30 22:05:35 2025 -0300
+
+    UseCase: CreateCompany e CompanyController
+
+[33mcommit 4377ddba3ab2be8e99dec2f9227067355bd803da[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Weldys Andrade do Carmo <weldyscarmo27@gmail.com>
+Date:   Tue Dec 30 20:45:03 2025 -0300
+
+    Criando as entidades company e job
+
+[33mcommit 7d90cc85eb45e583611eb54f0e5439eb8eee1319[m
+Author: Weldys Andrade do Carmo <weldyscarmo27@gmail.com>
+Date:   Tue Dec 30 19:48:20 2025 -0300
+
+    UseCase: CreateCandidateUseCase
+
+[33mcommit e66ce749133536d1c8942e17e265c5e226b6635c[m
+Author: Weldys Andrade do Carmo <weldyscarmo27@gmail.com>
+Date:   Tue Dec 30 11:31:59 2025 -0300
+
+    Criando repositório
+
+[33mcommit b2af7477c24b4b819eb6847823c887f5a799de37[m
+Author: Weldys Andrade do Carmo <weldyscarmo27@gmail.com>
+Date:   Tue Dec 30 11:01:46 2025 -0300
+
+    Criando a tabela canditato
+
+[33mcommit aa8ef6fe1e1b8ce66820878dc3d107df28d96808[m
+Author: Weldys Andrade do Carmo <weldyscarmo27@gmail.com>
+Date:   Mon Dec 29 12:31:58 2025 -0300
+
+    Criando estrutura do projeto|Inserindo validação|Formatando mensagem de validação|Inserindo Spring Data
