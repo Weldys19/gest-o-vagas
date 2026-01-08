@@ -2,6 +2,13 @@ package com.br.weldyscarmo.gestao_vagas.modules.candidate.controllers;
 
 import com.br.weldyscarmo.gestao_vagas.modules.candidate.dto.AuthCandidateDTO;
 import com.br.weldyscarmo.gestao_vagas.modules.candidate.useCases.AuthCandidateUseCase;
+import com.br.weldyscarmo.gestao_vagas.modules.company.dto.AuthCompanyDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,18 +19,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/candidate")
+@Tag(name = "Autenticação", description = "Endpoints para autenticação e geração de token JWT")
 public class AuthCandidateController {
 
     @Autowired
     private AuthCandidateUseCase authCandidateUseCase;
 
     @PostMapping("/auth")
+    @Operation(summary = "Autenticar candidato",
+            description = "Essa função é resposável pelo login em uma conta de candidato")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content(schema = @Schema(implementation = AuthCandidateDTO.class))
+            }),
+            @ApiResponse(responseCode = "401", description = "Usuário/Senha incorreto")
+    })
     public ResponseEntity<Object> create(@RequestBody AuthCandidateDTO authCandidateDTO){
         try {
             var authCandidate = this.authCandidateUseCase.execute(authCandidateDTO);
             return ResponseEntity.ok().body(authCandidate);
         } catch (Exception e){
-            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
         }
     }
