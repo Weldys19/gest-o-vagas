@@ -18,7 +18,7 @@ public class SwaggerConfig {
     }
 
     private SecurityScheme creatSecurityScheme(){
-        return new io.swagger.v3.oas.models.security.SecurityScheme().name("jwt_auth")
+        return new SecurityScheme().name("jwt_auth")
                 .scheme("bearer").bearerFormat("JWT").type(SecurityScheme.Type.HTTP);
     }
 }
